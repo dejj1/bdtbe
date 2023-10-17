@@ -47,10 +47,10 @@ graduateController.post("/register", async (req, res) => {
     additionalComments,
   } = req.body;
   try {
-    const isExisting = await Graduate.findOne({ email: req.body.email });
-    if (isExisting) {
-      throw new Error("Already such an email registered!");
-    }
+    // const isExisting = await Graduate.findOne({ email: req.body.email });
+    // if (isExisting) {
+    //   throw new Error("Already such an email registered!");
+    // }
     // const hashedPassword = await bcrypt.hash(req.body.password, 10)
 
     const newUser = await Graduate.create({ ...req.body });

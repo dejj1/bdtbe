@@ -48,11 +48,11 @@ undergraduateController.post('/register', async(req, res)=>{
         additionalComments,
       } = req.body;
     try {
-        const isExisting = await Undergraduate.findOne({email: req.body.email})
-        if(isExisting){
-            throw new Error("Already such an email registered!")
-        }
-        // const hashedPassword = await bcrypt.hash(req.body.password, 10)
+        // const isExisting = await Undergraduate.findOne({email: req.body.email})
+        // if(isExisting){
+        //     throw new Error("Already such an email registered!")
+        // }
+        // // const hashedPassword = await bcrypt.hash(req.body.password, 10)
 
         const newUser = await Undergraduate.create({...req.body})
         // const token = jwt.sign({id: newUser._id}, process.env.JWT_SECRET, {expiresIn: "4h"})

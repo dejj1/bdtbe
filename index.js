@@ -5,6 +5,8 @@ const cors = require("cors")
 const authController = require("./controllers/authController")
 const graduateController = require("./controllers/graduateController")
 const undergraduateController = require("./controllers/undergraduateController")
+const newsletterController = require("./controllers/newsletterController")
+const contactUsController = require("./controllers/contactUsController")
 const app = express()
 const User = require('./models/User')
 
@@ -19,6 +21,8 @@ app.use(express.urlencoded({extended: true}))
 app.use("/auth", authController)
 app.use("/graduate", graduateController)
 app.use("/undergraduate", undergraduateController)
+app.use("/newsletter", newsletterController)
+app.use("/help", contactUsController)
 
 
 //starting server
